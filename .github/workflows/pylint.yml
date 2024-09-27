@@ -29,6 +29,7 @@ jobs:
     - name: Run script
       run:  |
         python scripts/nasdaq_scrape_SH.py
+        
     - name: Analysing the code with pylint and black
       run: |
         pylint $(git ls-files 'scripts/*.py')
