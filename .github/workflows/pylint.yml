@@ -20,9 +20,15 @@ jobs:
         pip install pylint
         pip install black
         pip install pytest
+        pip install pandas
+        pip install bs4
+        pip install requests
     - name: Run pytest
       run:  |
         pytest lectures/01-python-summary/lecture-scripts/test_*
+    - name: Run script
+      run:  |
+        python scripts/nasdaq_scrape_SH.py
     - name: Analysing the code with pylint and black
       run: |
         pylint $(git ls-files 'scripts/*.py')
